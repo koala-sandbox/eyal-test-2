@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eyal-test-2
+  labels:
+    app: eyal-test-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eyal-test-2
+  template:
+    spec:
+      containers:
+      - name: eyal-test-2
+        image: me-west1-docker.pkg.dev/koala-ops-demo-373407/koala-repo/eyal-test-2:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
+          limits:
+            cpu: 500m
+            memory: 500Mi
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: eyal-test-2-configmap
+    metadata:
+      labels:
+        app: eyal-test-2

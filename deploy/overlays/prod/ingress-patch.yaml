@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: prod.eyal-test-2.koala-demo-cluster.cluster.koalaops.com

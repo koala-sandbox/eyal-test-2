@@ -1,0 +1,57 @@
+ServiceName = "eyal-test-2"
+Name = "eyal-test-2"
+Description = "dsfasdf"
+Owners = ["eyal.dulb@gmail.com"]
+ServerFramework = "go-server"
+ServerMain = ""
+ArtifactRepository = "me-west1-docker.pkg.dev/koala-ops-demo-373407/koala-repo"
+Domain = "cluster.koalaops.com"
+Port = 8080
+
+[Repo]
+  Name = "eyal-test-2"
+  GitUser = "koala-sandbox"
+  URL = "https://github.com/koala-sandbox/eyal-test-2"
+  Token = ""
+
+[OpenAPIConfig]
+  SpecPath = ""
+  CodegenTool = ""
+
+[[Environments]]
+  Name = "dev"
+  Namespace = "dev"
+  Cluster = "koala-demo-cluster"
+  IngressEnabled = true
+  IngressHost = ""
+  [Environments.EnvDeploymentConfig]
+    AutoDeploy = true
+
+[[Environments]]
+  Name = "prod"
+  Namespace = "prod"
+  Cluster = "koala-demo-cluster"
+  IngressEnabled = true
+  IngressHost = ""
+  [Environments.EnvDeploymentConfig]
+    AutoDeploy = false
+
+[SSLConfig]
+  CertName = "eyal-test-2-tls-cert"
+  Issuer = "letsencrypt"
+  IssuerContactEmail = "eyal.dulb@gmail.com"
+
+[Metrics]
+  Collector = ""
+  [Metrics.Endpoint]
+    Path = ""
+    Port = 0
+    Scheme = ""
+    Interval = ""
+
+[Tracing]
+  Backend = ""
+  URL = ""
+
+[Profiling]
+  Tool = ""
